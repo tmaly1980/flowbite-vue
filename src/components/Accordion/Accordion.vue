@@ -8,6 +8,10 @@ import { nanoid } from 'nanoid'
 import { useAccordionState } from '@/components/Accordion/composables/useAccordionState'
 
 const props = defineProps({
+  defaultOpen: {
+    type: Boolean,
+    default: true,
+  },
   alwaysOpen: {
     type: Boolean,
     default: false,

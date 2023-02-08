@@ -2,7 +2,7 @@ import { onBeforeMount, onBeforeUnmount, reactive } from 'vue'
 import type { tState } from '@/components/Accordion/types'
 
 const accordionsStates = reactive<tState>({})
-export function useAccordionState(id?: string, options?: {flush: boolean, alwaysOpen: boolean}): {
+export function useAccordionState(id?: string, options?: {flush: boolean, alwaysOpen: boolean, defaultOpen: boolean}): {
   accordionsStates: tState
 } {
 
@@ -12,6 +12,7 @@ export function useAccordionState(id?: string, options?: {flush: boolean, always
       id: id,
       flush: options?.flush ?? false,
       alwaysOpen: options?.alwaysOpen ?? false,
+      defaultOpen: options?.defaultOpen ?? true,
       panels: {},
     }
   })

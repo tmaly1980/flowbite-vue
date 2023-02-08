@@ -28,7 +28,7 @@ onMounted(() => {
   accordionState.value.panels[panelId] = {
     id: panelId,
     order: panelsCount,
-    isVisible: !panelsCount,
+    isVisible: accordionState.defaultOpen ? !panelsCount : false,
   }
 })
 </script>
